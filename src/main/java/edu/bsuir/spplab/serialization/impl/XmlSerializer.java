@@ -8,6 +8,9 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Optional;
 
 public class XmlSerializer implements BaseSerializator {
@@ -22,6 +25,11 @@ public class XmlSerializer implements BaseSerializator {
         } catch (JsonProcessingException e) {
             logger.log(Level.ERROR, "Can't serialize" + e.getMessage());
 
+        }
+        try (FileWriter writer = new FileWriter("src/main/resources/xmlSerialization.xml", false)) {
+            writer.write(xmlResult.get());
+        } catch (IOException e) {
+            logger.log(Level.ERROR, "Can't serialize" + e.getMessage());
         }
         return xmlResult;
     }
