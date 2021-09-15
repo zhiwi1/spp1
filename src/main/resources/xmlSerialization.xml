@@ -1,6 +1,1 @@
-<TraceResult>
-    <methodName>main</methodName>
-    <className>edu.bsuir.spplab.Main</className>
-    <methodExecutionTime>-1631639391433</methodExecutionTime>
-    <fullTimeOfMethodsExecution>1000</fullTimeOfMethodsExecution>
-</TraceResult>
+<TraceResult><listOfCustomThreads><listOfCustomThreads><listOfTraceData><listOfTraceData><methodData>main</methodData><classData>edu.bsuir.spplab.main.Main</classData><methodExecutionTime>1000</methodExecutionTime></listOfTraceData></listOfTraceData><runtimeOfMethodsInThread>1000</runtimeOfMethodsInThread></listOfCustomThreads><listOfCustomThreads><listOfTraceData><listOfTraceData><methodData>main</methodData><classData>edu.bsuir.spplab.main.Main</classData><methodExecutionTime>500</methodExecutionTime></listOfTraceData></listOfTraceData><runtimeOfMethodsInThread>500</runtimeOfMethodsInThread></listOfCustomThreads><listOfCustomThreads><listOfTraceData><listOfTraceData><methodData>run</methodData><classData>edu.bsuir.spplab.main.Main$1</classData><methodExecutionTime>2001</methodExecutionTime></listOfTraceData></listOfTraceData><runtimeOfMethodsInThread>2001</runtimeOfMethodsInThread></listOfCustomThreads></listOfCustomThreads></TraceResult>

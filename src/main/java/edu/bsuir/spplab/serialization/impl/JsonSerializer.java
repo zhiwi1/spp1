@@ -2,7 +2,7 @@ package edu.bsuir.spplab.serialization.impl;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import edu.bsuir.spplab.TraceResult;
+import edu.bsuir.spplab.tracer.TraceResult;
 import edu.bsuir.spplab.serialization.BaseSerializator;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;

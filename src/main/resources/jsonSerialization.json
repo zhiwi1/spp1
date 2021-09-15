@@ -1,6 +1,24 @@
 {
-  "methodName" : "main",
-  "className" : "edu.bsuir.spplab.Main",
-  "methodExecutionTime" : -1631639391433,
-  "fullTimeOfMethodsExecution" : 1000
+  "listOfCustomThreads" : [ {
+    "listOfTraceData" : [ {
+      "methodData" : "main",
+      "classData" : "edu.bsuir.spplab.main.Main",
+      "methodExecutionTime" : 1000
+    } ],
+    "runtimeOfMethodsInThread" : 1000
+  }, {
+    "listOfTraceData" : [ {
+      "methodData" : "main",
+      "classData" : "edu.bsuir.spplab.main.Main",
+      "methodExecutionTime" : 500
+    } ],
+    "runtimeOfMethodsInThread" : 500
+  }, {
+    "listOfTraceData" : [ {
+      "methodData" : "run",
+      "classData" : "edu.bsuir.spplab.main.Main$1",
+      "methodExecutionTime" : 2001
+    } ],
+    "runtimeOfMethodsInThread" : 2001
+  } ]
 }

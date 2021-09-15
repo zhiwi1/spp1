@@ -1,4 +1,4 @@
-package edu.bsuir.spplab;
+package edu.bsuir.spplab.tracer;
 
 import java.util.List;
 
@@ -31,13 +31,5 @@ public class TraceDataOfMethod {
         this.methodExecutionTime = methodExecutionTime;
     }
 
-    @Override
-    public String toString() {
-        final StringBuilder sb = new StringBuilder("TraceDataOfMethod{");
-        sb.append("methodData='").append(methodData).append('\'');
-        sb.append(", classData='").append(classData).append('\'');
-        sb.append(", methodExecutionTime=").append(methodExecutionTime);
-        sb.append('}');
-        return sb.toString();
-    }
+
 }

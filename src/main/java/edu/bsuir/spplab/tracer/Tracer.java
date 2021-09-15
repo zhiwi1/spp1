@@ -1,4 +1,4 @@
-package edu.bsuir.spplab;
+package edu.bsuir.spplab.tracer;
 
 public interface Tracer {
     void startTrace();

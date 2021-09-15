@@ -1,6 +1,6 @@
 package edu.bsuir.spplab.serialization;
 
-import edu.bsuir.spplab.TraceResult;
+import edu.bsuir.spplab.tracer.TraceResult;
 
 import java.util.Optional;
 
