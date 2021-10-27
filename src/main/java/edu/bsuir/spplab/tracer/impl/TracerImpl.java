@@ -19,14 +19,14 @@ public class TracerImpl implements Tracer<TraceResult> {
     @Override
     public void startTrace() {
         Long threadId = Thread.currentThread().getId();
-        ThreadTracer threadTrace;
+        ThreadTracer threadTracer;
         if (mapOfTracers.containsKey(threadId)) {
-            threadTrace = mapOfTracers.get(threadId);
+            threadTracer = mapOfTracers.get(threadId);
         } else {
-            threadTrace = new ThreadTracer(threadId);
-            mapOfTracers.put(threadId, threadTrace);
+            threadTracer = new ThreadTracer(threadId);
+            mapOfTracers.put(threadId, threadTracer);
         }
-        threadTrace.startTrace();
+        threadTracer.startTrace();
     }
 
     @Override

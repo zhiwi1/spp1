@@ -5,7 +5,7 @@ import java.time.Instant;
 
 public class MethodTracer implements Tracer<MethodResult> {
 
-    private final MethodResult curInfo;
+    private final MethodResult methodResult;
     private Instant startTime;
 
     public MethodTracer() {
@@ -13,7 +13,7 @@ public class MethodTracer implements Tracer<MethodResult> {
         StackTraceElement[] stackTrace = Thread.currentThread().getStackTrace();
         String nameOfTracingMethod = stackTrace[4].getMethodName();
         String classOfTracingMethod = stackTrace[4].getClassName();
-        this.curInfo = new MethodResult(nameOfTracingMethod, classOfTracingMethod);
+        this.methodResult = new MethodResult(nameOfTracingMethod, classOfTracingMethod);
     }
 
     @Override
@@ -24,16 +24,16 @@ public class MethodTracer implements Tracer<MethodResult> {
     @Override
     public void stopTrace() {
         long elapsed = Duration.between(startTime, Instant.now()).toMillis();
-        curInfo.setTime(elapsed);
+        methodResult.setTime(elapsed);
     }
 
     @Override
     public MethodResult getTraceResult() {
-        return curInfo;
+        return methodResult;
     }
 
     public void addChildResult(MethodResult methodResult) {
-        this.curInfo.addChildMethod(methodResult);
+        this.methodResult.addChildMethod(methodResult);
     }
 
 }

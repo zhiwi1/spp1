@@ -3,7 +3,7 @@ package edu.bsuir.spplab.serialization.impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import edu.bsuir.spplab.tracer.TraceResult;
-import edu.bsuir.spplab.serialization.BaseSerializator;
+import edu.bsuir.spplab.serialization.BaseSerializer;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Optional;
 
 
-public class JsonSerializer implements BaseSerializator {
+public class JsonSerializer implements BaseSerializer {
     private static final Logger logger = LogManager.getLogger();
     private final ObjectMapper mapper = new ObjectMapper();
     private static final String RELATIVE_PATH = "src/main/resources/jsonSerialization.json";
@@ -24,7 +24,6 @@ public class JsonSerializer implements BaseSerializator {
         try {
             jsonResult = Optional.ofNullable(mapper.writerWithDefaultPrettyPrinter()
                     .writeValueAsString(traceResult.getThreadResults()));
-
         } catch (JsonProcessingException e) {
             logger.log(Level.ERROR, String.format("Can't serialize %s", e.getMessage()));
         }

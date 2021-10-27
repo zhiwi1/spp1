@@ -1,21 +1,29 @@
 [ {
   "id" : 1,
-  "time" : 7004.0,
+  "time" : 7002.0,
   "methodsResult" : [ {
     "name" : "main",
     "className" : "edu.bsuir.spplab.main.Main",
-    "time" : 7004.0,
+    "time" : 7002.0,
     "childMethodsResult" : [ {
       "name" : "innerMethod",
       "className" : "edu.bsuir.spplab.main.Main",
       "time" : 3001.0,
       "childMethodsResult" : [ ]
     }, {
-      "name": "innerMethod",
-      "className": "edu.bsuir.spplab.main.Main",
-      "time": 3000.0,
-      "childMethodsResult": []
-    }
-    ]
+      "name" : "innerMethod",
+      "className" : "edu.bsuir.spplab.main.Main",
+      "time" : 3000.0,
+      "childMethodsResult" : [ ]
+    } ]
+  } ]
+}, {
+  "id" : 14,
+  "time" : 1000.0,
+  "methodsResult" : [ {
+    "name" : "run",
+    "className" : "edu.bsuir.spplab.main.Main$1",
+    "time" : 1000.0,
+    "childMethodsResult" : [ ]
   } ]
 } ]

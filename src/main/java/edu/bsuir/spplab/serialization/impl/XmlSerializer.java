@@ -3,7 +3,7 @@ package edu.bsuir.spplab.serialization.impl;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import edu.bsuir.spplab.tracer.TraceResult;
-import edu.bsuir.spplab.serialization.BaseSerializator;
+import edu.bsuir.spplab.serialization.BaseSerializer;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +12,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Optional;
 
-public class XmlSerializer implements BaseSerializator {
+public class XmlSerializer implements BaseSerializer {
     private final XmlMapper xmlMapper = new XmlMapper();
     private static final Logger logger = LogManager.getLogger();
     private static final String RELATIVE_PATH = "src/main/resources/xmlSerialization.xml";
