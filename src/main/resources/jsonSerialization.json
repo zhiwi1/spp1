@@ -1,24 +1,21 @@
-{
-  "listOfCustomThreads" : [ {
-    "listOfTraceData" : [ {
-      "methodData" : "main",
-      "classData" : "edu.bsuir.spplab.main.Main",
-      "methodExecutionTime" : 1000
-    } ],
-    "runtimeOfMethodsInThread" : 1000
-  }, {
-    "listOfTraceData" : [ {
-      "methodData" : "main",
-      "classData" : "edu.bsuir.spplab.main.Main",
-      "methodExecutionTime" : 500
-    } ],
-    "runtimeOfMethodsInThread" : 500
-  }, {
-    "listOfTraceData" : [ {
-      "methodData" : "run",
-      "classData" : "edu.bsuir.spplab.main.Main$1",
-      "methodExecutionTime" : 2001
-    } ],
-    "runtimeOfMethodsInThread" : 2001
+[ {
+  "id" : 1,
+  "time" : 7004.0,
+  "methodsResult" : [ {
+    "name" : "main",
+    "className" : "edu.bsuir.spplab.main.Main",
+    "time" : 7004.0,
+    "childMethodsResult" : [ {
+      "name" : "innerMethod",
+      "className" : "edu.bsuir.spplab.main.Main",
+      "time" : 3001.0,
+      "childMethodsResult" : [ ]
+    }, {
+      "name": "innerMethod",
+      "className": "edu.bsuir.spplab.main.Main",
+      "time": 3000.0,
+      "childMethodsResult": []
+    }
+    ]
   } ]
-}
+} ]

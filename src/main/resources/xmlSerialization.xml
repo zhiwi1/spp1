@@ -1,1 +1,29 @@
-<TraceResult><listOfCustomThreads><listOfCustomThreads><listOfTraceData><listOfTraceData><methodData>main</methodData><classData>edu.bsuir.spplab.main.Main</classData><methodExecutionTime>1000</methodExecutionTime></listOfTraceData></listOfTraceData><runtimeOfMethodsInThread>1000</runtimeOfMethodsInThread></listOfCustomThreads><listOfCustomThreads><listOfTraceData><listOfTraceData><methodData>main</methodData><classData>edu.bsuir.spplab.main.Main</classData><methodExecutionTime>500</methodExecutionTime></listOfTraceData></listOfTraceData><runtimeOfMethodsInThread>500</runtimeOfMethodsInThread></listOfCustomThreads><listOfCustomThreads><listOfTraceData><listOfTraceData><methodData>run</methodData><classData>edu.bsuir.spplab.main.Main$1</classData><methodExecutionTime>2001</methodExecutionTime></listOfTraceData></listOfTraceData><runtimeOfMethodsInThread>2001</runtimeOfMethodsInThread></listOfCustomThreads></listOfCustomThreads></TraceResult>
+<TraceResult>
+    <threadResults>
+        <threadResults>
+            <id>1</id>
+            <time>7004.0</time>
+            <methodsResult>
+                <methodsResult>
+                    <name>main</name>
+                    <className>edu.bsuir.spplab.main.Main</className>
+                    <time>7004.0</time>
+                    <childMethodsResult>
+                        <childMethodsResult>
+                            <name>innerMethod</name>
+                            <className>edu.bsuir.spplab.main.Main</className>
+                            <time>3001.0</time>
+                            <childMethodsResult/>
+                        </childMethodsResult>
+                        <childMethodsResult>
+                            <name>innerMethod</name>
+                            <className>edu.bsuir.spplab.main.Main</className>
+                            <time>3000.0</time>
+                            <childMethodsResult/>
+                        </childMethodsResult>
+                    </childMethodsResult>
+                </methodsResult>
+            </methodsResult>
+        </threadResults>
+    </threadResults>
+</TraceResult>

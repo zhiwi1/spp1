@@ -13,31 +13,27 @@ import java.io.IOException;
 import java.util.Optional;
 
 public class XmlSerializer implements BaseSerializator {
-    private static final XmlMapper xmlMapper = new XmlMapper();
+    private final XmlMapper xmlMapper = new XmlMapper();
     private static final Logger logger = LogManager.getLogger();
+    private static final String RELATIVE_PATH = "src/main/resources/xmlSerialization.xml";
 
     @Override
     public Optional<String> serialize(TraceResult traceResult) {
         Optional<String> xmlResult = Optional.empty();
         try {
             String xmlString = xmlMapper.writeValueAsString(traceResult);
-//            xmlString = formatString(xmlString);
             xmlResult = Optional.ofNullable(xmlString);
         } catch (JsonProcessingException e) {
-            logger.log(Level.ERROR, "Can't serialize" + e.getMessage());
+            logger.log(Level.ERROR, String.format("Can't serialize %s", e.getMessage()));
         }
-        try (FileWriter writer = new FileWriter("src/main/resources/xmlSerialization.xml", false)) {
-            writer.write(xmlResult.get());
-        } catch (IOException e) {
-            logger.log(Level.ERROR, "Can't serialize" + e.getMessage());
+        if (xmlResult.isPresent()) {
+            try (FileWriter writer = new FileWriter(RELATIVE_PATH, false)) {
+                writer.write(xmlResult.get());
+            } catch (IOException e) {
+                logger.log(Level.ERROR, String.format("Can't serialize %s", e.getMessage()));
+            }
         }
         return xmlResult;
     }
 
-//    private String formatString(String s) {
-//        s= s.replaceAll("<listOfCustomThreads><listOfCustomThreads>", "<listOfCustomThreads>");
-//        s=s.replaceAll("</listOfCustomThreads></listOfCustomThreads>", "</listOfCustomThreads>");
-//        s=s.replaceAll("<listOfTraceData><listOfTraceData>", " <listOfTraceData>");
-//        return s.replaceAll("</listOfTraceData></listOfTraceData>", " </listOfTraceData>");
-//    }
 }

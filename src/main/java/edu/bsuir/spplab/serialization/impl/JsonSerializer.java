@@ -15,22 +15,25 @@ import java.util.Optional;
 
 public class JsonSerializer implements BaseSerializator {
     private static final Logger logger = LogManager.getLogger();
-    private static final ObjectMapper mapper = new ObjectMapper();
+    private final ObjectMapper mapper = new ObjectMapper();
+    private static final String RELATIVE_PATH = "src/main/resources/jsonSerialization.json";
 
     @Override
     public Optional<String> serialize(TraceResult traceResult) {
         Optional<String> jsonResult = Optional.empty();
         try {
             jsonResult = Optional.ofNullable(mapper.writerWithDefaultPrettyPrinter()
-                    .writeValueAsString(traceResult));
+                    .writeValueAsString(traceResult.getThreadResults()));
 
         } catch (JsonProcessingException e) {
-            logger.log(Level.ERROR, "Can't serialize" + e.getMessage());
+            logger.log(Level.ERROR, String.format("Can't serialize %s", e.getMessage()));
         }
-        try (FileWriter writer = new FileWriter("src/main/resources/jsonSerialization.json", false)) {
-            writer.write(jsonResult.get());
-        } catch (IOException e) {
-            logger.log(Level.ERROR, "Can't serialize" + e.getMessage());
+        if (jsonResult.isPresent()) {
+            try (FileWriter writer = new FileWriter(RELATIVE_PATH, false)) {
+                writer.write(jsonResult.get());
+            } catch (IOException e) {
+                logger.log(Level.ERROR, String.format("Can't serialize %s", e.getMessage()));
+            }
         }
         return jsonResult;
     }

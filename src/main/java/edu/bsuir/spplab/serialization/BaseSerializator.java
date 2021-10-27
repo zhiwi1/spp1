@@ -6,6 +6,5 @@ import java.util.Optional;
 
 @FunctionalInterface
 public interface BaseSerializator {
-    public Optional<String> serialize(TraceResult traceResult);
-
+   Optional<String> serialize(TraceResult traceResult);
 }

@@ -1,9 +1,9 @@
 package edu.bsuir.spplab.tracer;
 
-public interface Tracer {
+public interface Tracer<T> {
     void startTrace();
 
     void stopTrace();
 
-    TraceResult getTraceResult();
+    T getTraceResult();
 }

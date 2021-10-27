@@ -1,22 +1,16 @@
 package edu.bsuir.spplab.tracer;
 
-import edu.bsuir.spplab.tracer.CustomThreadWrapper;
+import lombok.Getter;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
+@Getter
 public class TraceResult {
-    List<CustomThreadWrapper> listOfCustomThreads = new ArrayList<>();
 
-    public void add(CustomThreadWrapper threadWrapper) {
-        listOfCustomThreads.add(threadWrapper);
-    }
+    private final List<ThreadResult> threadResults;
 
-    public List<CustomThreadWrapper> getListOfCustomThreads() {
-        return listOfCustomThreads;
-    }
-
-    public void setListOfCustomThreads(List<CustomThreadWrapper> listOfCustomThreads) {
-        this.listOfCustomThreads = listOfCustomThreads;
+    public TraceResult(List<ThreadResult> threadResults) {
+        this.threadResults = threadResults;
     }
 }
